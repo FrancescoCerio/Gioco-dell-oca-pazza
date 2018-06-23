@@ -15,15 +15,23 @@ private:
     casella caselle[MAX_DIM];
     // Dimensione del vettore;
     int dim;
+    string posGiocatori(giocatore g[], int numG, int pos);
     
 public:
     
     // Costruttore di default del 
     tabellone();
-    void stampaTabellone();
     
+    // Stampa a schermo tutte le caselle del tabellone
+    void stampaTabellone(giocatore g[], int numG);
+    
+    // Ritorna la dimensione del tabellone
     int getDim();
+    
+    // Applica l'effetto delle caselle 
     void effetto(giocatore &g);
+    
+    // Ritorna la casella numero n
     casella getCasella(int n);
 };
 
