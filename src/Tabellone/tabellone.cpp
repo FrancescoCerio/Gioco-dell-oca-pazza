@@ -22,7 +22,19 @@ tabellone::tabellone(){
     this->caselle[dim]->setArrivo();
 }
 
-void tabellone::stampaTabellone(){
+string tabellone::posGiocatori(giocatore g[], int numG, int pos){
+    string s;
+    for (int i=0; i<numG; i++){
+        if (g[i].getPos()==pos){
+            s+=g[i].getColore()+"×"+"\x1b[0m";
+        }else {
+            s+=" ";
+        }
+    }
+    return s;
+}
+
+void tabellone::stampaTabellone(giocatore g[], int numG){
     int n=this->getDim()/2;
     
     cout<<endl;
@@ -32,17 +44,16 @@ void tabellone::stampaTabellone(){
     
     cout <<endl<<"- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "<<endl<<endl;
     for (int i=0;i<=9;i++){
-        cout<<"| 0"<<i<<" - "<< this->caselle[i]->getNomeTipo()<<"\t"<<"\t"<<"\t"<<"\t"<<"\t"<<"| "<<i+n+1<<" - "<<this->caselle[i+n+1]->getNomeTipo()<<endl;
+        cout<<"| 0"<<i<<" - "<< this->caselle[i].getNomeTipo()<<"\t"<<"\t"<<posGiocatori(g, numG, i)<<"\t"<<"| "<<i+n+1<<" - "<<this->caselle[i+n+1].getNomeTipo()<<"\t"<<"\t"<<posGiocatori(g, numG, i+n+1)<<"\t"<<endl;
     }
     
     for (int i=10;i<=n;i++){
         if (i+n+1<=this->getDim()){
-            cout<<"| "<<i<<" - "<< this->caselle[i]->getNomeTipo()<<"\t"<<"\t"<<"\t"<<"\t"<<"\t"<<"| "<<i+n+1<<" - "<<this->caselle[i+n+1]->getNomeTipo()<<endl;
+            cout<<"| "<<i<<" - "<< this->caselle[i].getNomeTipo()<<"\t"<<"\t"<<posGiocatori(g, numG, i)<<"\t"<<"| "<<i+n+1<<" - "<<this->caselle[i+n+1].getNomeTipo()<<"\t"<<"\t"<<posGiocatori(g, numG, i+n+1)<<endl;
         }else{
-            cout<<"| "<<i<<" - "<< this->caselle[i]->getNomeTipo()<<"\t"<<"\t"<<"\t"<<"\t"<<"\t"<<endl;
+            cout<<"| "<<i<<" - "<< this->caselle[i].getNomeTipo()<<"\t"<<"\t"<<posGiocatori(g, numG, i)<<endl;
         }
     }
-    cout <<endl<<"- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "<<endl<<endl;
 }
 
 int tabellone::getDim(){
