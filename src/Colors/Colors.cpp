@@ -42,11 +42,11 @@ const char* setDefault(){
 
 const char* setColor(int n){
     
-    if(n == 1){
+    if(n == 0){
         return setRed();
-    } else if(n == 2){
+    } else if(n == 1){
         return setYellow();
-    } else if(n == 3){
+    } else if(n == 2){
         return setBlue();
     } else {
         return setGreen();
