@@ -12,14 +12,14 @@ giocatore::giocatore(char n[MAX_CHAR_NAME], int numColore){
     strcpy(this->nome, n);
     setPos(0);
     setNumTurni(0);
-    setNumColore(numColore);
+    this->colore=setColor(numColore);
 }
 
 
 //Creo le funzioni per il giocatore
 
-char* giocatore::getNome(){
-    return this->nome;
+string giocatore::getNome(){
+    return (this->colore + this->nome + "\x1b[0m");
 }
 
 string giocatore::getColore(){
