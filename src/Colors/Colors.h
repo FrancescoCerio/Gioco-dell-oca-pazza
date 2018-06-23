@@ -21,7 +21,7 @@
 using namespace std;
 
         
-const char* setColor();
+const char* setColor(int n);
         
 const char* setRed();
 const char* setYellow();

@@ -36,20 +36,16 @@ const char* setDefault(){
 
 
 /*
- Funzione per impostare il colore ai nomi dei giocatori
- in modo casuale tramite rand()
+ Funzione per che ritorna un colore in base al numero del giocatore
  */
 
-
-const char* setColor(){
+const char* setColor(int n){
     
-    int random = rand() % 4 + 1;
-    
-    if(random == 1){
+    if(n == 1){
         return setRed();
-    } else if(random == 2){
+    } else if(n == 2){
         return setYellow();
-    } else if(random == 3){
+    } else if(n == 3){
         return setBlue();
     } else {
         return setGreen();
