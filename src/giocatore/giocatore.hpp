@@ -31,20 +31,18 @@ private:
     char nome[MAX_CHAR_NAME];
     int numTurni;
     int posizione;
-    Color colore;
+    string colore;
     bool rilancia;
     
     typedef giocatore *lista_giocatori;
     
 public:
     
-    giocatore(char n[MAX_CHAR_NAME], int pos);
+    giocatore(char n[MAX_CHAR_NAME], int numColore);
     
     void setPos(int p);
     
     int getPos();
-    
-    const char* setColorPlayer(char n[]);
     
     bool fermo;
     
@@ -56,13 +54,14 @@ public:
     
     void incTurni();
     
-    char* getNome();
+    string getNome();
     
     string getColore();
     
     void setNumColore(int numColore);
     
     void setRilancia(bool rilancia);
+    
     bool getRilancia();
     
 };
