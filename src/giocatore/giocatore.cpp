@@ -12,6 +12,8 @@ giocatore::giocatore(char n[MAX_CHAR_NAME], int numColore){
     strcpy(this->nome, n);
     setPos(0);
     setNumTurni(0);
+    
+    // numColore setta il colore del giocatore in base al suo numero
     this->colore=setColor(numColore);
 }
 
