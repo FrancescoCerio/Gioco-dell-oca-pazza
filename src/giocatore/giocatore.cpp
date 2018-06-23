@@ -12,14 +12,17 @@ giocatore::giocatore(char n[MAX_CHAR_NAME], int numColore){
     strcpy(this->nome, n);
     setPos(0);
     setNumTurni(0);
-    setNumColore(numColore);
+    this->colore=setColor(numColore);
 }
-
 
 //Creo le funzioni per il giocatore
 
-char* giocatore::getNome(){
-    return this->nome;
+string giocatore::getNome(){
+    return (this->colore + this->nome + "\x1b[0m");
+}
+
+string giocatore::getColore(){
+    return this->colore;
 }
 
 void giocatore::setPos(int p){
@@ -56,22 +59,3 @@ void giocatore::setRilancia(bool rilancia){
 bool giocatore::getRilancia(){
     return this->rilancia;
 } 
-
-/*
- + setColorPlayer() inserisce il colore all'interno della stringa dividendola in 3 parti:
-   1 - codice ANSI per il colore ( scelto casualmente da setColor() )
-   2 - il nome del giocatore
-   3 - codice ANSI che resetta il colore di deafult tramite setDefault()
-*/
-
-void giocatore::setNumColore(int numColore){
-    this -> colore = static_cast<Color>(numColore);
-}
-
-const char* giocatore::setColorPlayer(char n[40]){
-    char* colorName = (char*)malloc(MAX_CHAR_NAME);
-    strcpy(colorName, setColor(this -> colore));
-    strcat(colorName, n);
-    strcat(colorName, setDefault());
-    return colorName;
-}
