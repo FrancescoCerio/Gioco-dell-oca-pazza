@@ -58,6 +58,8 @@ public:
     
     char* getNome();
     
+    string getColore();
+    
     void setNumColore(int numColore);
     
     void setRilancia(bool rilancia);
