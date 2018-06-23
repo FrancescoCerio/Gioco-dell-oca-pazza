@@ -31,7 +31,7 @@ private:
     char nome[MAX_CHAR_NAME];
     int numTurni;
     int posizione;
-    Color colore;
+    string colore;
     
     typedef giocatore *lista_giocatori;
     
@@ -55,9 +55,9 @@ public:
     
     void decTurni();
     
-    char* getNome();
+    string getNome();
     
-    void setNumColore(int numColore);
+    string getColore();
     
 };
 
