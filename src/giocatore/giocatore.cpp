@@ -22,6 +22,10 @@ char* giocatore::getNome(){
     return this->nome;
 }
 
+string giocatore::getColore(){
+    return this->colore;
+}
+
 void giocatore::setPos(int p){
     this->posizione = p;
 }
