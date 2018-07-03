@@ -1,4 +1,4 @@
-//
+////
 //  Colors.cpp
 //  Gioco dell'oca pazza
 //
@@ -12,7 +12,7 @@
 
 
 /*
- Funzioni per impostare i colori 
+ Funzioni per impostare i colori
  */
 
 const char* setRed(){
@@ -52,4 +52,3 @@ const char* setColor(int n){
         return setGreen();
     }
 }
-
