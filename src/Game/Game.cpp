@@ -12,7 +12,7 @@
 #include "Domande.hpp"
 #include "casella.hpp"
 #include "tabellone.hpp"
-#include "Mazzo.h"
+#include "Mazzo.hpp"
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -38,8 +38,6 @@ Game::Game(){
     
     //Inizializzo i giocatori e il tabellone
     initGiocatore();
-//    mostraTurno();
-//    gameLoop();
     
     //Loop per il gioco
     //Termina se isFinished = true
@@ -47,6 +45,7 @@ Game::Game(){
         gameLoop();
     }
     
+    end();
 }
 
 
@@ -65,21 +64,21 @@ void Game::messaggioIniziale(){
 //Funzione che inizializza i giocatori con i parametri necessari
 void Game::initGiocatore(){
     
-    cout << " - Inserire il numero di partecipanti (da 1 a 4): ";
-    cin >> this->n_giocatori;
+    cout << " - Inserire il numero di partecipanti (da 2 a 4): ";
+    cin >> n_giocatori;
     
-    while(cin.fail() || this->n_giocatori < 2 || this->n_giocatori > 4){
+    while(cin.fail() || n_giocatori < 2 || n_giocatori > 4){
         cin.clear();
         cin.ignore(256, '\n');
         cout << endl;
         cout << " - Il numero di giocatori deve essere compreso tra 2 e 4 - " << endl << endl;
-        cout << " - Inserire il numero di partecipanti (da 1 a 4): ";
-        cin >> this->n_giocatori;
+        cout << " - Inserire il numero di partecipanti (da 2 a 4): ";
+        cin >> n_giocatori;
     }
     
     char n[40];
     
-    for (int i = 0; i < this->n_giocatori; i++){
+    for (int i = 0; i < n_giocatori; i++){
         cout << " * Inserire il nome del giocatore " << i + 1 << ": ";
         cin >> n;
         giocatori[i] = new giocatore(n, i);
@@ -90,9 +89,9 @@ void Game::initGiocatore(){
 
 //Loop del gioco
 void Game::gameLoop(){
-    tabel->stampaTabellone();
+    tabel->stampaTabellone(this->giocatori, this->n_giocatori);
     mostraTurno();
-    giocatoreSuccessivo();
+    giocatoreCorrente = giocatoreSuccessivo();
 }
 
 
@@ -111,7 +110,7 @@ void Game::mostraTurno(){
         
     } else {
         
-        this->giocatori[giocatoreCorrente]->fermo = false;
+//        this->giocatori[giocatoreCorrente]->fermo = false;
         cout << "Lancia il dado" << endl;
         cin.ignore();
         this->dado->mostraRisultato();
@@ -124,11 +123,14 @@ void Game::mostraTurno(){
         cout << endl << "Raggiungi la casella " << this->giocatori[giocatoreCorrente]->getPos();
         cin.ignore();
         
-        this->tabel->effetto(this->giocatori[giocatoreCorrente]);
+        this->tabel->effetto(this->giocatori[giocatoreCorrente], m);
+        cin.get();
     }
-    muoviGiocatore();
+    if (giocatori[giocatoreCorrente]->getPos() == tabel->getDim()){
+        finish(giocatori[giocatoreCorrente]);
+    }
 }
-
+/*
 void Game::muoviGiocatore(){
     int localPos;
     giocatori[giocatoreCorrente]->setPos(dado->d);
@@ -139,12 +141,13 @@ void Game::muoviGiocatore(){
     }
 //    this->tabel->effetto(this->giocatori[giocatoreCorrente]);
 }
-
-void Game::giocatoreSuccessivo(){
-    if(giocatoreCorrente > this->n_giocatori)
-        this->giocatoreCorrente = 0;
-    else
-        giocatoreCorrente++;
+*/
+int Game::giocatoreSuccessivo(){
+    if(giocatoreCorrente == n_giocatori - 1)
+        return 0;
+    else{
+        return giocatoreCorrente+1;
+}
 }
 
 int Game::giocatorePrecedente(){
@@ -164,7 +167,9 @@ void Game::initTabellone(){
 
 
 //Funzione da chiamare una volta terminato il gioco, che setta isFinished = true
-void Game::finish(){
+void Game::finish(giocatore *g){
+    cout << " - Complimenti! " << g->getNome() << " hai vinto il gioco!" << endl;
+    cin.get();
     this->isFinished = true;
 }
 

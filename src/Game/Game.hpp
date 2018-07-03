@@ -15,14 +15,16 @@
 #include "giocatore.hpp"
 #include "tabellone.hpp"
 #include "Dado.hpp"
-#include "Mazzo.h"
+#include "Mazzo.hpp"
 
 
 class Game{
 
+    int giocatoreCorrente = 0;
     bool isFinished = false;
     void gameLoop();
-    int n_giocatori;
+    int n_giocatori = 0;
+    giocatore* giocatori[MAX_GIOCATORI];
     tabellone* tabel;
     Mazzo *m;
     
@@ -31,8 +33,8 @@ class Game{
     Dado* dado = new Dado();
     
 public:
-    int giocatoreCorrente = 0;
-    giocatore* giocatori[MAX_GIOCATORI];
+    
+    
     Game();
     void messaggioIniziale();
     void initGiocatore();
@@ -40,12 +42,12 @@ public:
     void initTabellone();
     
     void muoviGiocatore();
-    void giocatoreSuccessivo();
+    int giocatoreSuccessivo();
     int giocatorePrecedente();
     
     void mostraTurno();
     
-    void finish();
+    void finish(giocatore *g);
     
     void end();
     
