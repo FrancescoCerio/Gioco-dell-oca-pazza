@@ -7,16 +7,17 @@
 
 #ifndef RILANCIADADO_H_
 #define RILANCIADADO_H_
-#include "Gioco.hpp"
+#include "Game.hpp"
 #include "Carta.hpp"
+
 
 class Rilancia_Dado : public Carta { //sottoclasse di carta
 
 public:
-    tipoCarta rilanciaDado = rilanciaDado;
+//    tipoCarta rilanciaDado = rilanciaDado;
 	Rilancia_Dado();
-    void effetto_carta(Gioco* gioco);
-	//virtual ~Rilancia_Dado();
+    void effetto_rilancia();
+    virtual ~Rilancia_Dado(){};
 };
 
 #endif /* RILANCIADADO_H_ */

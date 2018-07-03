@@ -15,7 +15,7 @@ using namespace std;
 
 class DomandaCarta : public Carta {
 public:
-    tipoCarta domanda = domanda;
+//    tipoCarta domanda = domanda;
 	DomandaCarta();
 	void effetto_carta(giocatore* g);
 	virtual ~DomandaCarta();

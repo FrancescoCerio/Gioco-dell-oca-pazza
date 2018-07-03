@@ -9,8 +9,7 @@
 
 
 Fermo_un_turno::Fermo_un_turno() : Carta("Fermo per un turno") {
-
-
+    
 }
 
 void Fermo_un_turno::effetto_carta(giocatore* g){

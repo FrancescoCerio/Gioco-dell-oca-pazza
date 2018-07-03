@@ -9,6 +9,7 @@
 #include <cstring>
 #include <iostream>
 #include "Domande.hpp"
+#include "casella.hpp"
 
 DomandaCarta::DomandaCarta() : Carta("Rispondi ad una domanda! ") {
 	// TODO Auto-generated constructor stub
@@ -22,7 +23,7 @@ void DomandaCarta::effetto_carta(giocatore* g){
     
     if(!risposta_giusta)
     
-        g->incTurni();
+        g->saltaTurno();
     
     else {
         

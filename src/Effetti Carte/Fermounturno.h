@@ -14,10 +14,10 @@
 
 class Fermo_un_turno : public Carta  {
 public:
-    tipoCarta fermoUnTurno = fermoUnTurno;
+//    tipoCarta fermoUnTurno = fermoUnTurno;
 	Fermo_un_turno();
 	void effetto_carta(giocatore* g);
-	virtual ~Fermo_un_turno();
+    virtual ~Fermo_un_turno();
 };
 
 #endif /* GIOCO_DELL_OCA_PAZZA_SRC_CARTA_FERMOUNTURNO_H_ */

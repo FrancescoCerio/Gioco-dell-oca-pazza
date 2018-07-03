@@ -13,10 +13,10 @@
 
 class TornaInizio : public Carta {
 public:
-    tipoCarta tornaInizio = tornaInizio;
+//    tipoCarta tornaInizio = tornaInizio;
 	TornaInizio();
 	void effetto_carta(giocatore* g);
-	virtual ~TornaInizio();
+    virtual ~TornaInizio(){};
 };
 
 #endif /* GIOCO_DELL_OCA_PAZZA_SRC_CARTA_TORNAINIZIO_H_ */
