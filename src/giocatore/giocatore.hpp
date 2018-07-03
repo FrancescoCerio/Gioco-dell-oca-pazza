@@ -23,7 +23,7 @@ using namespace std;
 class giocatore{
     
     int n_giocatori;
-
+    
     static int giocatoriTotali;
     
 private:
@@ -48,6 +48,8 @@ public:
     bool fermo;
     
     void setNumTurni(int n);
+    
+    void incTurni();
     
     int getnumTurni();
     

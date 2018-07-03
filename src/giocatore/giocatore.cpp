@@ -46,16 +46,9 @@ void giocatore::incTurni(){
 }
 
 bool giocatore::saltaTurno(){
-    fermo = this->numTurni != 0;
+    fermo = true;
     if(fermo)
         incTurni();
     return fermo;
 }
 
-void giocatore::setRilancia(bool rilancia){
-    this->rilancia = rilancia;
-}
-
-bool giocatore::getRilancia(){
-    return this->rilancia;
-} 
