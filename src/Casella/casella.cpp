@@ -13,7 +13,7 @@ casella::casella(){
         case (4):
             this->tipo=Avanti;
             break;
-        
+            
         case (5):
             this->tipo=Indietro;
             break;
@@ -35,7 +35,7 @@ casella::casella(){
             this->tipo=Vuota;
             break;
     }
-
+    
 }
 
 void casella::setInizio(){
@@ -51,10 +51,11 @@ tipo casella::getTipo(){
     return this->tipo;
 }
 
+
 string casella::getNomeTipo(){
     switch (this->tipo) {
         case Inizio:
-            return "Inizio  ";
+            return "\x1b[32mInizio\x1b[0m";
             break;
             
         case Vuota:
@@ -62,27 +63,28 @@ string casella::getNomeTipo(){
             break;
             
         case Avanti:
-            return "Avanti  ";
+            return "\x1b[33mAvanti\x1b[0m  ";
             break;
             
         case Indietro:
-            return "Indietro";
+            return "\x1b[34mIndietro\x1b[0m";
             break;
             
         case Pesca:
-            return "Pesca   ";
+            return "\x1b[35mPesca\x1b[0m   ";
             break;
             
         case Fermo:
-            return "Fermo   ";
+            return "\x1b[31mFermo\x1b[0m   ";
             break;
             
         case Domanda:
-            return "Domanda ";
+            return "\x1b[36mDomanda\x1b[0m ";
             break;
             
         case Arrivo:
-            return "Arrivo  ";
+            return "\x1b[32mArrivo\x1b[0m";
             break;
     }
 }
+
