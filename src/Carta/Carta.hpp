@@ -30,8 +30,9 @@ public:
     Carta(char const * messaggio);
     virtual void setMessaggio(char const * messaggio); //metodo per definire il messaggio
     virtual void getMessaggio();// metodo per mostrare il messaggio
-    virtual void effetto_carta(giocatore* g, tipoCarta tipo);
-    //virtual ~Carta();
+    virtual void effetto_carta(giocatore* g/*, tipoCarta tipo*/);
+    void effetto_rilancia();
+    virtual ~Carta();
     tipoCarta getTipo();
     string getNomeTipoCarta();
 };

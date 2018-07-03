@@ -50,31 +50,31 @@ void Carta::getMessaggio(){
 };
 
 
-void Carta::effetto_carta(giocatore* g, tipoCarta tipo){
-    switch (tipo) {
-        case tornaInizio:
-            g->setPos(0);
-            break;
-            
-        case fermoUnTurno:
-            g->incTurni();
-            break;
-            
-        case rilanciaDado:
-            Dado* tmp_d = new Dado();
-            tmp_d->mostraRisultato();
-            delete tmp_d;
-            break;
-            
-        case domanda:
-            DomandaCarta* tmp_dom = new DomandaCarta();
-            tmp_dom->effetto_carta(g);
-            delete tmp_dom;
-    }
+void Carta::effetto_carta(giocatore* g/*, tipoCarta tipo*/){
+//    switch (tipo) {
+//        case tornaInizio:
+//            g->setPos(0);
+//            break;
+//
+//        case fermoUnTurno:
+//            g->incTurni();
+//            break;
+//
+//        case rilanciaDado:
+//            Dado* tmp_d = new Dado();
+//            tmp_d->mostraRisultato();
+//            delete tmp_d;
+//            break;
+//
+//        case domanda:
+//            DomandaCarta* tmp_dom = new DomandaCarta();
+//            tmp_dom->effetto_carta(g);
+//            delete tmp_dom;
+//    }
 }
 
-/*
+
 Carta::~Carta() {
 	// TODO Auto-generated destructor stub
 }
-*/
+
