@@ -20,7 +20,7 @@ struct domanda{
     char giusta;
 };
 
-domanda segliDomanda();
+struct domanda segliDomanda();
 
 bool ask();
 
