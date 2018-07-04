@@ -81,7 +81,7 @@ void tabellone::effetto(giocatore *g, Mazzo *mazzo){
             if (g->getPos()+spostamento<=this->dim) {
                 g->setPos(g->getPos()+spostamento);
             } else {
-                g->setPos(g->getPos()+(g->getPos()+spostamento-dim)-1);
+                g->setPos(this->getDim()- (g->getPos()+spostamento - this->getDim()));
             }
             cout << "Raggiungi la casella "<< g->getPos();
             break;
