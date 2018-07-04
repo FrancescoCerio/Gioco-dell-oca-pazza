@@ -34,74 +34,73 @@ void Dado::mostraRisultato(){
 
 void Dado::disegnaDado(){
     
-    cout << endl;
-    cout << "   ______     " << endl;
-    cout << "  /     /\\   " << endl;
-    cout << " /  '  /  \\  " << endl;
-    cout << "/_____/. . \\ " << endl;
-    cout << "\\ . . \\    /" << endl;
-    cout << " \\ . . \\  / " << endl;
-    cout << "  \\_____\\/ " << endl << endl;
+    cout << "       ______     " << endl;
+    cout << "      /     /\\   " << endl;
+    cout << "     /  '  /  \\  " << endl;
+    cout << "    /_____/. . \\ " << endl;
+    cout << "    \\ . . \\    /" << endl;
+    cout << "     \\ . . \\  / " << endl;
+    cout << "      \\_____\\/ " << endl << endl;
     
     usleep(500000);
     
     switch (this->d) {
         case 1:
             
-            cout << " _______ " << endl;
-            cout << "|       |" << endl;
-            cout << "|   .   |" << endl;
-            cout << "|       |" << endl;
-            cout << " ------- " << endl;
+            cout << "       _______ " << endl;
+            cout << "      |       |" << endl;
+            cout << "      |   .   |" << endl;
+            cout << "      |       |" << endl;
+            cout << "       ------- " << endl << endl;
             
             break;
         case 2:
             
-            cout << " _______ " << endl;
-            cout << "| .     |" << endl;
-            cout << "|       |" << endl;
-            cout << "|     . |" << endl;
-            cout << " ------- " << endl;
+            cout << "       _______ " << endl;
+            cout << "      | .     |" << endl;
+            cout << "      |       |" << endl;
+            cout << "      |     . |" << endl;
+            cout << "       ------- " << endl << endl;
             
             break;
             
         case 3:
             
-            cout << " _______ " << endl;
-            cout << "| .     |" << endl;
-            cout << "|   .   |" << endl;
-            cout << "|     . |" << endl;
-            cout << " ------- " << endl;
+            cout << "       _______ " << endl;
+            cout << "      | .     |" << endl;
+            cout << "      |   .   |" << endl;
+            cout << "      |     . |" << endl;
+            cout << "       ------- " << endl << endl;
             
             break;
             
         case 4:
             
-            cout << " _______ " << endl;
-            cout << "| .   . |" << endl;
-            cout << "|       |" << endl;
-            cout << "| .   . |" << endl;
-            cout << " ------- " << endl;
+            cout << "       _______ " << endl;
+            cout << "      | .   . |" << endl;
+            cout << "      |       |" << endl;
+            cout << "      | .   . |" << endl;
+            cout << "       ------- " << endl << endl;
             
             break;
             
         case 5:
             
-            cout << " _______ " << endl;
-            cout << "| .   . |" << endl;
-            cout << "|   .   |" << endl;
-            cout << "| .   . |" << endl;
-            cout << " ------- " << endl;
+            cout << "       _______ " << endl;
+            cout << "      | .   . |" << endl;
+            cout << "      |   .   |" << endl;
+            cout << "      | .   . |" << endl;
+            cout << "       ------- " << endl << endl;
             
             break;
             
         case 6:
             
-            cout << " _______ " << endl;
-            cout << "| . . . |" << endl;
-            cout << "| . . . |" << endl;
-            cout << "| . . . |" << endl;
-            cout << " ------- " << endl;
+            cout << "       _______ " << endl;
+            cout << "      | . . . |" << endl;
+            cout << "      | . . . |" << endl;
+            cout << "      | . . . |" << endl;
+            cout << "       ------- " << endl << endl;
             
             break;
             
