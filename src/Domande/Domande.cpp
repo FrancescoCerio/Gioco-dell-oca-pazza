@@ -129,9 +129,11 @@ bool ask(){
     }
     cout << endl;
     
-    while (risposta != 'a' || risposta != 'b' || risposta != 'c' || risposta != 'd'){
+    cin >> risposta;
+    
+    while (cin.fail() || risposta < ((char)97) || risposta > ((char)100)){
+        cout << " - Input non valido - " << endl;
         cin >> risposta;
-        cout << "Input non valido" << endl;
     }
     
     
@@ -139,8 +141,10 @@ bool ask(){
     if(risposta == d.giusta){
         cout << "La risposta è corretta!" << endl << endl;
         isTrue = true;
+        cin.get();
     } else {
         cout << "Risposta errata!" << endl << endl;
+        cin.get();
     }
     return isTrue;
 }
