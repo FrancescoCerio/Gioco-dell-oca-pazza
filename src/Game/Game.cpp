@@ -84,6 +84,7 @@ void Game::initGiocatore(){
         giocatori[i] = new giocatore(n, i);
     }
     cout << endl;
+    cin.ignore();
 }
 
 
