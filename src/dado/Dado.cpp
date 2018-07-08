@@ -6,7 +6,7 @@
 //  Copyright © 2018 Francesco Cerio. All rights reserved.
 //
 
-#include "../Dado/Dado.hpp"
+#include "../dado/Dado.hpp"
 #include <cstdlib>
 #include <stdlib.h>
 #include <iostream>
