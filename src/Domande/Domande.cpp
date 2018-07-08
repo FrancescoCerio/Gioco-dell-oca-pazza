@@ -127,11 +127,11 @@ domanda domande[NUM_DOMANDE] = {
         "c - Joey LaMotta",
         "d - Tommy Como",}, 'a'},
     
-    {"Dov'è ambientato \"Il talento di Mr.Ripley\", con Jude Law e Matt Damon?",{
+   /* {"Dov'è ambientato \"Il talento di Mr.Ripley\", con Jude Law e Matt Damon?",{
         "a - Napoli",
         "b - Venezia",
         "c - Ischia",
-        "d - Sorrento",}, 'c'}
+        "d - Sorrento",}, 'c'} */
   
 };
 
